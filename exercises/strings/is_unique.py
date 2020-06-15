@@ -18,7 +18,8 @@ def is_unique__no_data_structures(s):
     Complexity is effectively O(n log n) [+ O(n)].
     If tasked to implement a sort, I recommend a recursive mergesort which is
     easier to produce under time constraints.
-    Using two pointers traverses the list until same character is detected.
+    Using two pointers traverses the list until the same character is
+    detected, indicating that there is a duplicate present.
     '''
     if len(s) <= 1:
         return True

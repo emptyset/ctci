@@ -15,12 +15,12 @@ RUN poetry config virtualenvs.create false
 
 WORKDIR /srv
 
+COPY pyproject.toml .
+COPY poetry.lock .
+RUN poetry install --no-root --no-ansi --no-interaction
+
 COPY exercises/ exercises/
 COPY tests/ tests/
 COPY pytest.ini .
-
-COPY pyproject.toml .
-COPY poetry.lock .
-RUN poetry install --no-ansi --no-interaction
 
 CMD ["python", "-m", "main.py"]
