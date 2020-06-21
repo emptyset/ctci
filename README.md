@@ -8,13 +8,13 @@ It is my hope this project could be a good reference for others.
 Having settled on **python** as my code interview language, my objectives
 include:
 
-- Language Immersion
+- **Language Immersion**:
 Minimize time spent looking up language features or constructs.
 
-- Problem Space Familiarity
+- **Problem Space Familiarity**:
 Recognize similar problems and apply solutions I have done before.
 
-- Improve Coding Speed
+- **Improve Coding Speed**:
 Complete coding assessments as quickly as possible.
 
 ## Methodology
