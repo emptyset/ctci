@@ -1,3 +1,4 @@
+from exercises.lib.matrix import Matrix
 from exercises.strings.rotate_matrix import rotate_matrix
 
 
@@ -5,11 +6,11 @@ def make_matrix(row_strings):
     m = []
     for s in row_strings:
         m.append(list(s))
-    return m
+    return Matrix(m)
 
 
 def validate(actual, expected):
-    for actual_row, expected_row in zip(actual, expected):
+    for actual_row, expected_row in zip(actual.m, expected.m):
         assert actual_row == expected_row
 
 
