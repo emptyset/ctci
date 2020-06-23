@@ -1,16 +1,16 @@
 from exercises.lib.matrix import Position
 
 
-'''
+"""
 1.7
 Given an image represented by a NxN matrix, where each pixel in the image is
 4 bytes, write a method to rotate the image by 90 degrees.  Can you do this
 in place?
-'''
+"""
 
 
 def rotate_matrix(m):
-    '''
+    """
     I visualize the in-place rotation as (no pun intended) a string
     wrapped around a block, representing the values of the matrix in the
     outer columns and rows.  In order to rotate in-place, the string is just
@@ -41,7 +41,7 @@ def rotate_matrix(m):
     It became a lot easier in a subsequent pass of the code to setup some
     helper classes to represent the bounds of the current matrix "border
     string" and the current rotation buffer.
-    '''
+    """
     return _rotate(m, _get_new_bounds(m))
 
 

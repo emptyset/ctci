@@ -1,13 +1,13 @@
-'''
+"""
 1.5
 There are three types of edits that can be performed on strings: insert a
 character, remove a character, or replace a character.  Given two strings,
 write a function to check if they are one edit (or zero edits) away.
-'''
+"""
 
 
 def is_one_away(left, right):
-    '''
+    """
     The basic idea is to immediately classify the expected operation.
     For example, if the left string is 1 longer than the right, then this
     is a REMOVE operation.  If right is 1 longer than left, this means
@@ -21,7 +21,7 @@ def is_one_away(left, right):
 
     If another mismatch is encountered, we can exit immediately with False.
     When the end of both strings is reached, we return True.
-    There's some additional checks for the empty string edge cases.
+    There"s some additional checks for the empty string edge cases.
 
     Complexity is O(n).
 
@@ -32,13 +32,13 @@ def is_one_away(left, right):
     strings in tandem, you can "classify" the operation needed to shift either
     the left or right string by sliding a "window" of two characters.  In an
     earlier solution attempt, this required handling the edge cases specially
-    and also padding the strings at the end to ensure the "window" didn't run
+    and also padding the strings at the end to ensure the "window" didn"t run
     over.
 
     Instead of the list conversion to treat the strings as queues, one can
-    also use indexes and implement the operations as increments, I just don't
+    also use indexes and implement the operations as increments, I just don"t
     like the tedious index math around the edge cases.
-    '''
+    """
     def REMOVE(left, right):
         if len(left) > 0:
             _ = left.pop(0)
