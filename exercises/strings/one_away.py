@@ -21,7 +21,7 @@ def is_one_away(left, right):
 
     If another mismatch is encountered, we can exit immediately with False.
     When the end of both strings is reached, we return True.
-    There"s some additional checks for the empty string edge cases.
+    There's some additional checks for the empty string edge cases.
 
     Complexity is O(n).
 
@@ -36,7 +36,7 @@ def is_one_away(left, right):
     over.
 
     Instead of the list conversion to treat the strings as queues, one can
-    also use indexes and implement the operations as increments, I just don"t
+    also use indexes and implement the operations as increments, I just don't
     like the tedious index math around the edge cases.
     """
     def REMOVE(left, right):
