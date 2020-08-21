@@ -39,11 +39,34 @@ class LinkedList:
     def tail(self, value):
         self._tail = value
 
+    @property
+    def values(self):
+        for element in self:
+            yield element.value
+
     def __iter__(self):
         current = self.head
         while current is not None:
-            yield current.value
+            yield current
             current = current.next
+
+    def __len__(self):
+        length = 0
+        for element in self:
+            length += 1
+        return length
+
+    def __getitem__(self, index):
+        if index < 0:
+            return None
+
+        current = self.head
+        i = 0
+        while i < index:
+            current = current.next
+            i += 1
+
+        return current
 
 
 class Element:

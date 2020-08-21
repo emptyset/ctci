@@ -13,7 +13,7 @@ def remove_dupes__using_set(ll):
     The naive approach is to use a set to add values and then just return the
     values from the set.  This is O(n).
     """
-    return LinkedList(set(ll))
+    return LinkedList(set(ll.values))
 
 
 def remove_dupes__no_buffer(ll):
@@ -22,7 +22,7 @@ def remove_dupes__no_buffer(ll):
 
     Just using built-in sort here, O(n log n) overall.
     """
-    sll = LinkedList(sorted(ll))
+    sll = LinkedList(sorted(ll.values))
     current = sll.head
     while current.next is not None:
         if current.value == current.next.value:
