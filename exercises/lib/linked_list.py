@@ -20,6 +20,8 @@ class LinkedList:
     @head.setter
     def head(self, element):
         self._head = element
+        if self._head is not None:
+            self._head.prev = None
 
     @property
     def tail(self):
@@ -28,6 +30,8 @@ class LinkedList:
     @tail.setter
     def tail(self, element):
         self._tail = element
+        if self._tail is not None:
+            self._tail.next = None
 
     @property
     def values(self):
@@ -42,6 +46,21 @@ class LinkedList:
             self.tail.next = element
 
         self.tail = element
+
+    def remove(self, element):
+        if element.prev is None:
+            if element.next is not None:
+                element.next.prev = None
+            self.head = element.next
+        else:
+            element.prev.next = element.next
+
+        if element.next is None:
+            if element.prev is not None:
+                element.prev.next = None
+            self.tail = element.prev
+        else:
+            element.next.prev = element.prev
 
     def __iter__(self):
         current = self.head
