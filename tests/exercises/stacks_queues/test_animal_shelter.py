@@ -13,39 +13,30 @@ def test_AnimalShelter__operations():
     ])
 
     shelter.enqueue(Animal('cat', 'Magdalena'))
-    breakpoint()
 
     animal = shelter.dequeue_any()
     assert animal.kind == 'dog'
     assert animal.name == 'Dusty'
-    breakpoint()
 
     animal = shelter.dequeue_cat()
     assert animal.kind == 'cat'
     assert animal.name == 'Mr. Whiskers'
-    breakpoint()
 
     _ = shelter.dequeue_any()   # Sydney
-    breakpoint()
 
     animal = shelter.dequeue_cat()
     assert animal.kind == 'cat'
     assert animal.name == 'Skeletor'
-    breakpoint()
 
     _ = shelter.dequeue_dog()   # Adolphus
-    breakpoint()
 
     animal = shelter.dequeue_dog()
     assert animal.kind == 'dog'
     assert animal.name == 'Zero'
-    breakpoint()
 
     animal = shelter.dequeue_any()
     assert animal.kind == 'cat'
     assert animal.name == 'Magdalena'
-    breakpoint()
 
     animal = shelter.dequeue_any()
     assert animal is None
-    breakpoint()
