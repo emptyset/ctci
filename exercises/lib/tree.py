@@ -1,8 +1,9 @@
 class BinaryNode:
-    def __init__(self, value, left=None, right=None):
+    def __init__(self, value, left=None, right=None, parent=None):
         self._value = value
         self.left = left
         self.right = right
+        self.parent = parent
 
     @property
     def value(self):
@@ -15,6 +16,8 @@ class BinaryNode:
     @left.setter
     def left(self, node):
         self._left = node
+        if self._left is not None:
+            self._left.parent = self
 
     @property
     def right(self):
@@ -23,6 +26,16 @@ class BinaryNode:
     @right.setter
     def right(self, node):
         self._right = node
+        if self._right is not None:
+            self._right.parent = self
+
+    @property
+    def parent(self):
+        return self._parent
+
+    @parent.setter
+    def parent(self, node):
+        self._parent = node
 
     @property
     def height(self):
