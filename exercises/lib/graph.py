@@ -47,12 +47,9 @@ class Node:
 
         # always link source -> target
         self.outgoing.add(target)
+        target.incoming.add(self)
 
         if not self.directed:
-            # link bidirectionally on both nodes:
-            #     target -> source
-            #     target <- source
-            #     source <- target
-            target.incoming.add(self)
+            # link bidirectionally, target -> source
             target.outgoing.add(self)
             self.incoming.add(target)
